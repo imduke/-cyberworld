@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar transparent>
+    <ion-title>
+    	<img src="assets/images/fliqs.png" class="logo" />
+	</ion-title>
+	<ion-buttons end>
+		<button ion-button icon-only color="light" (click)="showWatchList()"><ion-icon light name="heart"></ion-icon></button>
+	</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchInput()" [formControl]="searchControl" placeholder="search movies..."></ion-searchbar>
+
+	<div *ngIf="searching" class="spinner-container">
+		<ion-spinner></ion-spinner>
+	</div>
+
+	<div *ngFor="let category of categories">
+
+		<button ion-button (click)="showViewCategory(category)">{{category.title}}<ion-icon name="arrow-dropright"></ion-icon></button>
+
+			<ion-grid>
+				<ion-scroll scrollX="true">
+					<ion-row nowrap>
+				        <ion-col *ngFor="let movie of category.items" col-6>
+							<ion-card>
+							  <button ion-button icon-only (click)="toggleFavouriteMovie(movie)">
+							  	<ion-icon *ngIf="!movie.favourite" name="heart-outline"></ion-icon>
+							  	<ion-icon *ngIf="movie.favourite" name="heart"></ion-icon>
+							  </button>
+							  <img tappable (click)="showMovieDetail(movie)" [src]="movie.image"/>
+							  <ion-card-content>
+							    <ion-card-title>{{movie.title}}</ion-card-title>
+							  </ion-card-content>
+							</ion-card>
+				        </ion-col> 
+				    </ion-row>
+			    </ion-scroll>
+			</ion-grid>
+
+	</div>
+
+</ion-content>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bethany's Pie Shop</title>
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" /><!-- TODO: check wat er naar environments moet-->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link href="~/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">@AppSettings.Value.SiteTitle</a>*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    @await Component.InvokeAsync("CategoryMenu")
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+                    <li><a asp-controller="Contact" asp-action="Index">Contact us</a></li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+
+        </div>
+    </div>
+    @*<div class="navbar navbar-inverse" role="navigation">
+            <a class="navbar-brand" href="#">Bethany's Pie Shop</a>
+        </div>*@
+    <div class="container body-content">
+        @*<div id="categories" class="col-xs-3">
+                Put something useful here later
+            </div>*@
+        <div class="col-xs-12">
+            @RenderBody()
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

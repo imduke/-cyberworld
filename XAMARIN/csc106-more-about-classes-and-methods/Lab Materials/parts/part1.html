@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 1: Using Optional Parameters</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Learning C# with Xamarin: More about classes and methods</header>
+
+    <section id="main">
+
+        <h1 id="page-title"></h1>
+
+        <h2>Duration</h2>
+        <p>
+            10 minutes
+        </p>
+
+        <!-- - - - - - - - - Goals - - - - - - - - -->
+        <h2 id="goals">Lab goals</h2>
+        <p>
+            In this exercise, you will modify a Xamarin.Forms application to display possible computer purchases. The price you show will be determined by
+            the parameters passed into a method. If you use the lab instructions, your UI will look something like:
+        </p>
+        <img src="./res/images/completed-lab1.PNG" />
+
+        <h2>Required Assets</h2>
+        <p>
+            The provided <strong>Resources</strong> folder for this part contains a subfolder named <strong>Start</strong> with a solution
+            you will use as starter code. The <strong>Completed</strong> subfolder contains a completed project you can use to check your work.
+        </p>
+
+        <!-- - - - - - - - - Steps - - - - - - - - -->
+        <h1 id="steps">Steps</h1>
+
+        <h2>Use a normal method with parameters</h2>
+        <p>
+            You are going to start with a pre-built program for purchasing computers. There are three different computer types you can buy, and with each one you can
+            choose to get a warranty and/or have the technical team setup the computer for you. Based on the choices you make, a final price is calculated.
+        </p>
+
+        <ol>
+            <li>
+                Launch Visual Studio and open the <strong>OptionalParameters.sln</strong> file in the
+                <strong>Resources/Start</strong> folder.
+            </li>
+           
+            <li>
+                Open the <b>MainPage.cs</b> file - this is part of the first project in your solution and is the one in which you will do all your work.
+            </li>
+            <img class="indent-none" src="./res/images/lab1-step2.png" />
+            <li>
+                Add some computer choices using the <code>PlaceOrder</code> method. Go ahead and add some variations by changing the computer
+                (use the predefined Computer1, Computer2 and Computer3 strings), and the booleans for AppleCare and computer setup and see what
+                results display on the screen when you run the application. For example, you could use the code below, or provide your own combinations.
+            </li>
+            <p>
+<pre class="codeblock prettyprint">
+void PlaceOrders()
+{
+   // TODO: add some computer choices using the PlaceOrder method
+   PlaceOrder(Computer1, false, false);
+   PlaceOrder(Computer2, true, false);
+   PlaceOrder(Computer2, false, true);
+   PlaceOrder(Computer1, true, true);
+}
+</pre>
+            </p>
+
+            <img src="./res/images/lab1-step3.png" class="indent-none" />
+        </ol>
+        <h2>Add optional parameters</h2>
+        <p>
+            Management has decided that they want to really push the support and setup benefit, so every sale should default to having both of those turned on.
+            You are going to modify the <code>PlaceOrder</code> method to set those two parameters to <code>true</code> by default.
+
+            <ol>
+                <li>
+                    Change the <code>PlaceOrder</code> method to set the two final parameters to <code>true</code> by default.
+                </li>
+<pre class="codeblock prettyprint">
+void PlaceOrder ( string computer, bool appleCare <span class="highlight">= true</span>, bool setUp <span class="highlight">= true</span>)
+</pre>
+
+                <li>
+                    Run the program and see how this change affects the existing calls. It should look exactly like it did before since we are explicitly passing all the parameters.
+                </li>
+
+                <li>
+                    Now, remove the booleans from some of your calls to see the defaults being used - run the application and see how the price is changed.
+                    Try different variations - passing <code>false</code> for the first boolean and leaving the second off, leaving both off, supplying both, etc.
+                </li>
+            </ol>
+
+
+            <!-- - - - - - - - - Summary - - - - - - - - -->
+            </ol>
+
+            <h1>Summary</h1>
+        <p>
+            In this lab exercise, you added several variations to the <code>PlaceOrder</code> method. You also added default values to two booleans to see how
+            those changes would display on the screen.
+        </p>
+
+        <div class="align-right">
+            <a href="../Start%20Here.html">Go Back</a>
+        </div>
+    </section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2017 Microsoft, Xamarin</footer>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 3: Add behavior to our Xamarin.Forms calculator</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Learning C# with Xamarin: Shifting from Console to Mobile</header>
+
+   	<section id="main">
+
+		<h1 id="page-title"></h1>
+
+		<h2>Duration</h2>
+		<p>20 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+
+		<h2 id="goals">Lab goals</h2>
+
+		<p>
+			In this final exercise we will modify your Xamarin.Forms calculator application and supply the behavior for the Calculate button to add, subtract, multiply and divide the two entered numbers. To complete the exercise, we will perform the following steps together:
+    </p>
+
+    <ol>
+      <li>
+        Create local fields in the class to hold the <code>Entry</code> elements we will be entering our numbers into - this will allow the code to access those elements to perform the calculations on.
+      </li>
+      <li>Add in a new <code>StackLayout</code> view with a set of <code>Label</code> controls to display the results of the operations. We will hide the entire <code>StackLayout</code> by setting the <code>IsVisibile</code> property to <code>false</code>.</li>
+      <li>Provide an event handler for the <code>Clicked</code> event on the <code>Button</code>.</li>
+      <li>In the event handler, provide the logic to get the two entered numbers from the <code>Entry</code> controls and add, subtract, multiply and divide them (checking for a zero divisor) and put the answers into the new results <code>Label</code>'s. Then we will show the entire set of results by changing the result <code>StackLayout.IsVisible</code> property to <code>true</code>.</li>
+    </ol>
+
+    <p>When we are finished, our application will look like:</p>
+
+    <img src="./res/images/calculator-final.PNG" height="600" />
+
+    <h2>Required Assets</h2>
+    <p>
+    There is a <b>Lab 03 Resources</b> folder included with this lab exercise which contains a completed project to compare your work against. In addition, if you were unable to complete the prior exercise in the allotted time, you can use the <b>Completed</b> project in the <b>Lab 02 Resources</b> as the starting point for this lab.
+    </p>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+
+		<h1 id="steps">Steps</h1>
+		<p>
+    Try to use the picture and above steps to complete the lab exercise, referring to the slides if you need any help in creating the UI. You can also use the following step-by-step instructions to fill in any knowledge gaps.
+		</p>
+
+		<h2>Create fields for the Entry controls</h2>
+		<ol>
+      <li>First, let's capture the two <code>Entry</code> views by placing them into fields in our <code>App</code> class. Create two fields in the class to store <code>firstNumber</code> and <code>secondNumber</code> and assign them in your constructor method. The method is currently creating local fields in the constructor itself.</li>
+    </ol>
+<p><a href="#" onclick="toggleCode(this, 'refactor3'); return false;" class="uiitem">Show Code</a><div id="refactor3" style="display:none;">
+<pre class="prettyprint">
+using System;
+using Xamarin.Forms;
+
+namespace Calculator
+{
+    public class App : Application
+    {
+        <span class="highlight">Entry firstNumber, secondNumber;</span>
+        ...
+
+        public App()
+        {
+           ...
+           <strike>Entry</strike> <span class="highlight">firstNumber =</span> new Entry();
+           layout.Children.Add(firstNumber);
+           ...
+           <strike>Entry</strike> <span class="highlight">secondNumber =</span> new Entry();
+           layout.Children.Add(secondNumber);
+        }
+    }
+}
+</pre></div></p>
+
+    <h2>Add in results labels</h2>
+    <p>
+    Next, let's add in the <code>Label</code> views we will use to display each result - one for each operation (add, subtract, multiply, divide). Since we only want to show these when you perform a calculation, we will create a new <code>StackLayout</code> to hold them all and hide it through the <code>IsVisible</code> property. This is a <code>bool</code> value (true/false) which determines whether it is shown on the screen - changing the value causes the entire <code>StackLayout</code> and all the children in it to appear and disappear.
+    </p>
+    <ol>
+      <li>In the constructor method, at the bottom (but before you assign the <code>MainPage</code> property), create a new <code>StackLayout</code> named <code>resultsLayout</code>.</li>
+      <li>Set the <code>IsVisible</code> property to <code>false</code> on the <code>StackLayout</code> - remember you can use the property-initializer syntax for this!</li>
+      <li>Add four labels as children in the <code>StackLayout</code>
+        <ul class="indent-none">
+          <li>sumLabel</li>
+          <li>differenceLabel</li>
+          <li>productLabel</li>
+          <li>quotientLabel</li>
+        </ul>
+        To hold each of the operations we will calculate.</li>
+      <li>Place all of the new objects into fields in the class - we will need to access these later when we handle the button click.</li>
+    </ol>
+
+    <div class="hintblock">
+    Here's a little C# shortcut: you can create, assign and add a UI element into a <code>StackLayout</code> in one line like this:
+    <pre class="prettyprint codeblock">
+    Label myField; // field declared in the class
+    ...
+    layout.Children.Add(myField = new Label() { Text = "Hello" });
+    </pre>
+    Notice how the label is created (new), assigned (=) and then added to the layout field all in one line.
+    </div>
+
+<p><a href="#" onclick="toggleCode(this, 'addResults'); return false;" class="uiitem">Show Code</a><div id="addResults" style="display:none;">
+<pre class="prettyprint">
+public class App : Application
+{
+    ...
+    <span class="highlight">StackLayout resultsLayout;
+    Label sumLabel, productLabel, differenceLabel, quotientLabel;</span>
+
+    ...
+
+    public App()
+    {
+        ...
+        layout.Children.Add(calcButton);
+
+        <span class="highlight">resultsLayout = new StackLayout {
+            IsVisible = false
+        };
+
+        resultsLayout.Children.Add(sumLabel = new Label());
+        resultsLayout.Children.Add(differenceLabel = new Label());
+        resultsLayout.Children.Add(productLabel = new Label());
+        resultsLayout.Children.Add(quotientLabel = new Label());
+
+        layout.Children.Add(resultsLayout);</span>
+
+        page.Content = layout;
+        MainPage = page;
+    } 
+}
+</pre></div></p>
+
+    <h2>Add an event handler to the button Clicked event</h2>
+    <p>
+    We want to perform our calculations when the user taps our "Calculate" button. To do this, we need to be notified when this happens. We get notified about user interactions with <em>events</em>.
+    </p>
+    <ol>
+      <li>In the constructor method, just after the <code>Button</code> is created, add an event handler named <code>OnCalculateClicked</code> for the <code>Clicked</code> event.</li>
+<pre class="prettyprint codeblock">
+Button calcButton = new Button() {
+    Text = "Calculate"
+};
+
+<span class="highlight">calcButton.Clicked += OnCalculateClicked;</span>
+
+layout.Children.Add(calcButton);
+</pre>
+    <li>Next, we need to create the method that is called when this happens - it must be named <code>OnCalculateClicked</code>. You can look at the slides to see the signature and add the method yourself, or there's a cool trick that your IDE can do to help you.
+      <ul class="indent-none">
+        <li>Right-click on the <code>OnCalculateClicked</code> name after the <b>+=</b> assignment. You should get a context menu which includes the choice <b>Fix</b>, if you hover over that, it will open to show a <b>Create method</b> option. If you click that, the IDE will create the method for you!</li>
+      </ul>
+    </li>
+  </ol>
+  <img src="./res/images/refactor.png"/>
+
+  <p><a href="#" onclick="toggleCode(this, 'methodHandler'); return false;" class="uiitem">Show Code</a><div id="methodHandler" style="display:none;">
+<pre class="prettyprint">
+public class App : Application
+{
+    public App()
+    {
+        ...
+        calcButton.Clicked += OnCalculateClicked;
+        ...
+    } 
+
+    <span class="highlight">private void OnCalculateClicked(object sender, EventArgs e)
+    {
+    }</span>
+}
+</pre></div></p>
+
+    <h2>Implement the calculator logic</h2>
+    <p>
+    In this final step, let's implement our calculator logic in the <code>OnCalculateClicked</code> method. Here we will retrieve the two numbers from our <code>Entry</code> controls, and perform each of the calculations - setting the results into our <code>Label</code> fields we created earlier.
+    </p>
+    <ol>
+      <li>Use the <code>Text</code> property on <code>firstNumber</code> to retrieve the string typed into the <code>Entry</code> control.</li>
+      <li>You will then need to turn this into a number - we'll use an integer in this case. If you remember from the last class, we used the <code>int.Parse</code> method to take a string and turn it into an integer. Use that method here to get the first number.</li>
+      <li>Repeat steps 1 &amp; 2 to get the second number using <code>secondNumber</code>.</li>
+      <li>Next, perform all four calculations (add, subtract, multiply and divide) and get the numeric results. Remember to properly handle the zero divisor case - just set the result to (-1) if the second number is zero.</li>
+      <li>Finally, using the <code>string.Format</code> method, create strings and assign them to your labels. This method works exactly like <code>Console.WriteLine</code> except that it returns a <code>string</code> instead of writing the output to the console. It accepts the same replacement tokens, so for example, you can use the following for your addition result:</li>
+
+<pre class="codeblock prettyprint">
+int sum = number1 + number2;
+sumLabel.Text = string.Format("The sum is: {0}", sum);
+</pre>
+      <li>Do the same for each of the math operations.</li>
+      <li>Lastly, set the <code>IsVisible</code> property on the <code>resultsLayout</code> field to <code>true</code> so it shows up on the screen.</li>
+    </ol>
+ 
+ <p><a href="#" onclick="toggleCode(this, 'calculate'); return false;" class="uiitem">Show Code</a><div id="calculate" style="display:none;">
+<pre class="prettyprint">
+void OnCalculateClicked(object sender, EventArgs e)
+{
+    int number1 = int.Parse(firstNumber.Text);
+    int number2 = int.Parse(secondNumber.Text);
+
+    sumLabel.Text = string.Format("The sum is: {0}", number1 + number2);
+    differenceLabel.Text = string.Format("The difference is: {0}", number1 - number2);
+    productLabel.Text = string.Format("The product is: {0}", number1 * number2);
+
+    int result = -1;
+    if (number2 != 0)
+        result = number1 / number2;
+    quotientLabel.Text = string.Format("The quotient is: {0}", result);
+
+    resultsLayout.IsVisible = true;
+}
+</pre></div></p>
+
+    <ol start="8">
+      <li>Run the application and type in two numbers and press the <b>Calculate</b> button - you should then see your results!</li>
+      <li>Here's the final application output.</li>
+    </ol>
+    <img src="./res/images/calculator-final.PNG" height="600" />
+
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+  <h1>Summary</h1>
+   <p>
+		In this lab exercise, you implemented a calculator in a mobile application that runs on iPhone, Android and Windows Phone - great job!
+  </p>
+
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+
+	</section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+     <footer>Copyright (C) 2017 Microsoft, Xamarin</footer>
+</body>
+</html>

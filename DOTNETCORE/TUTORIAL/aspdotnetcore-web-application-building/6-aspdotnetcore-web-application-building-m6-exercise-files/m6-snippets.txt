@@ -1,0 +1,103 @@
+Snippets Module 6
+-----------------
+
+Demo 1
+------
+
+List method
+-----------
+
+public ViewResult List(string category)
+{
+	IEnumerable<Pie> pies;
+	string currentCategory = string.Empty;
+
+	if (string.IsNullOrEmpty(category))
+	{
+		pies = _pieRepository.Pies.OrderBy(p => p.PieId);
+		currentCategory = "All pies";
+	}
+	else
+	{
+		pies = _pieRepository.Pies.Where(p => p.Category.CategoryName == category)
+		   .OrderBy(p => p.PieId);
+		currentCategory = _categoryRepository.Categories.FirstOrDefault(c => c.CategoryName == category).CategoryName;
+	}
+
+	return View(new PiesListViewModel
+	{
+		Pies = pies,
+		CurrentCategory = currentCategory
+	});
+}
+
+Pie\Details.cshtml
+------------------
+
+@model Pie
+
+<div class="thumbnail">
+    <img alt="@Model.Name" src="@Model.ImageUrl">
+    <div class="caption-full">
+        <h3 class="pull-right">@Model.Price</h3>
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+        <p class="button">
+            <a class="btn btn-primary">Add to cart</a>
+        </p>
+    </div>
+</div>
+
+PieController Details method
+----------------------------
+
+public IActionResult Details(int id)
+{
+	var pie = _pieRepository.GetPieById(id);
+	if (pie == null)
+		return NotFound();
+
+	return View(pie);
+}
+
+CategoryMenu Component
+----------------------
+ public class CategoryMenu : ViewComponent
+    {
+        private readonly ICategoryRepository _categoryRepository;
+        public CategoryMenu(ICategoryRepository categoryRepository)
+        {
+            _categoryRepository = categoryRepository;
+        }
+
+        public IViewComponentResult Invoke()
+        {
+            var categories = _categoryRepository.Categories.OrderBy(c => c.CategoryName);
+            return View(categories);
+        }
+    }
+	
+CategoryMenu view
+-----------------
+
+<li class="dropdown">
+    <a asp-controller="Pie" 
+       asp-action="Index" 
+       class="dropdown-toggle" data-toggle="dropdown">Pies<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a asp-controller="Pie" asp-action="List" 
+                   asp-route-category="@category.CategoryName">@category.CategoryName</a>
+            </li>
+        }
+        <li class="divider"></li>
+        <li>
+            <a asp-controller="Pie" asp-action="List" asp-route-Category="">View all pies</a>
+        </li>
+    </ul>
+</li>

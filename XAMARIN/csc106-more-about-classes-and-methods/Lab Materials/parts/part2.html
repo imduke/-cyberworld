@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 2: Create a method that returns multiple values</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Learning C# with Xamarin: More about classes and methods</header>
+
+   	<section id="main">
+
+		<h1 id="page-title"></h1>
+
+		<h2>Duration</h2>
+		<p>20 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+		<h2 id="goals">Lab goals</h2>
+		<p>
+            Here, you will modify a Xamarin.Forms application to get bank account information (balance, last deposit, and an activity flag).
+            Since methods can only return a single value, you will use <code>out</code> parameters to get some of the information back to the caller.
+            If you use the lab instructions, the output will look something like:
+		</p>
+		<img src="./res/images/completed-lab2.PNG" width="438" height="241" />
+		<p>
+			To complete this exercise, you will perform the following steps:
+		</p>
+
+		<ol>
+			<li>
+				Add a new method to the <b>Bank.cs</b> class that uses <code>out</code> parameters to return a fixed account balance and a date for the last deposit.
+                It will also return <code>true</code> from the method to indicate that the account is active.
+			</li>
+			<li>
+				Modify the <b>MainPage.cs</b> code to call the new method on the <code>Bank</code> class that's already been created in the class.
+			</li>
+			<li>
+				Take the returned information and add it to the three labels that have already been created, e.g. <code>activeLabel.Text, balanceLabel.Text, and lastDepositLabel.Text</code>.
+			</li>
+		</ol>
+
+		<h2>Required Assets</h2>
+		<p>
+            The provided <strong>Resources</strong> folder for this part contains a subfolder named <strong>Start</strong> with a solution
+            you will use as starter code. The <strong>Completed</strong> subfolder contains a completed project you can use to check your work.
+		</p>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+		<h1>Steps</h1>
+		<p>
+			Try to use the picture and above steps to complete the lab exercise, referring to the slides if you need any help in creating the bank account information. 
+            You can also use the following step-by-step instructions to fill in any knowledge gaps.
+		</p>
+
+		<h2>Add method and use out parameters</h2>
+		<p>
+			First, you will add a new method <code>GetAccountInfo</code> to the existing <b>Bank.cs</b> file into the class that is defined in the file.
+		</p>
+		<ol>
+			<li>
+				Open the <b>Bank.cs</b> file in the <b>OutParameters</b> project and locate the <code>Bank</code> class contained in it. 
+                It is currently empty except for a <code>TODO</code> comment.
+			</li>
+
+			<li>
+				Add a new method named <code>GetAccountInfo</code>. It should be <code>public</code> and return a <code>bool</code>.
+			</li>
+
+			<li>
+				Add three parameters to the method:
+				<ul class="indent-none">
+					<li><code>string accountNumber</code> which represents the account to lookup.</li>
+					<li><code>double balance</code> which will be the returning balance.</li>
+					<li><code>DateTime lastDeposit</code> which will be the returning date of last deposit.</li>
+				</ul>
+			</li>
+
+			<li>
+				Add the <code>out</code> keyword to the last two parameters (<code>balance</code> and <code>lastDeposit</code>).
+                This is the magic that ensures changes made to the parameters will modify the variables passed by the caller.
+			</li>
+
+			<li>
+				Implement the method - you won't actually use the <code>accountNumber</code> in this simulation,
+                but it would be a requirement if this method <em>actually did</em> lookup account information!
+				<ul class="indent-none">
+					<li>Set the <code>balance</code> to a fixed value - the lab uses <b>24127.84</b>.</li>
+					<li>Set the <code>lastDeposit</code> to a fixed date/time value by creating a new <code>DateTime</code> object and
+                    passing in a date and time value, we'll talk about this syntax next, but here's the code the lab uses:</li>
+<pre class="codeblock prettyprint">
+lastDeposit = new DateTime ( 2014, 11, 22, 14, 35, 20 );
+</pre>
+				</ul>
+			</li>
+			<li>
+				Return a boolean to show the account is active, the lab returns <code>true</code>,
+                but you can return either <code>true</code> or <code>false</code>.
+			</li>
+		</ol>
+		<p>
+			<a href="#" onclick="toggleCode(this, 'bankInfo'); return false;" class="uiitem">Show Code</a><div id="bankInfo" style="display:none;">
+<pre class="prettyprint">
+using System;
+namespace OutParameters
+{
+    public class Bank
+    {
+				<span class="highlight">public bool GetAccountInfo ( string accountNumber, 
+            out double balance, out DateTime lastDeposit )
+        {
+            // pretend there's code to look up account based on accountNumber
+            balance = 24127.84;
+            lastDeposit = new DateTime ( 2014, 11, 22, 14, 35, 20 );
+            bool isActive = true;
+            return isActive;
+        }</span>
+    }
+}
+</pre>
+			</div>
+		</p>
+		<h2>Call the Bank method</h2>
+		<p>
+			Next, you will use this new method you defined and gather up the data for your bank account.
+		</p>
+		<ol>
+			<li>
+				Open the <b>MainPage.cs</b> file in the <em>OutParameters</em> project. This class has a single method in it which already has
+                some code to create a UI and display it. You will be adding code into this method.
+			</li>
+			<li>
+				Locate the <code>TODO</code> comment, you will place all our code after this comment. First, add some fields to hold the balance and last deposit date.
+				<ul class="indent-none">
+					<li>a <code>double</code> named <b>balance</b>.</li>
+					<li>a <code>DateTime</code> named <b>lastDeposit</b>.</li>
+				</ul>
+			</li>
+
+			<li>
+				Next, call the <code>GetAccountInfo</code> method on the <code>Bank</code> object that is in the method already. 
+                You will need to pass several parameters to the method, remember you need to decorate the parameters with the <code>out</code>
+                keyword if it's an out parameter coming back from the method:
+
+				<ul class="indent-none">
+					<li>Pass an account number - the lab uses <code>"1021379"</code>.</li>
+					<li>Pass the <code>balance</code> field as an <code>out</code> parameter.</li>
+					<li>Pass the <code>lastDeposit</code> field as an <code>out</code> parameter.</li>
+				</ul>
+			</li>
+			<li>
+				<code>GetAccountInfo</code> returns a <code>bool</code> response, go ahead and store this off into another field - name it <code>activeAccount</code>.
+			</li>
+		</ol>
+		<p>
+			<a href="#" onclick="toggleCode(this, 'callMethod'); return false;" class="uiitem">Show Code</a><div id="callMethod" style="display:none;">
+<pre class="prettyprint">
+// TODO: get account information
+Bank bank = new Bank();
+double balance;
+DateTime lastDeposit;
+bool activeAccount = bank.GetAccountInfo( "1021379", out balance, out lastDeposit );
+</pre>
+			</div>
+		</p>
+		<h2>Add information to the three Labels</h2>
+		<p>
+			In this final step, you will update the three existing <code>Label</code>s to display the information you have retrieved from the <code>Bank</code> class.
+		</p>
+		<ol>
+			<li>
+				At the bottom of the <code>MainPage</code> method, you will find a comment which has the three labels listed in it - you need to append
+                information to the <code>Text</code> property for each of the controls.
+			</li>
+			<li>
+				Make sure to use the <code>+=</code> operator to <em>append</em> your text, and use the <code>ToString</code> method on each of your
+                fields to convert each one to a string. As an example, here's the <code>balance</code> being added:
+			</li>
+<pre class="codeblock prettyprint">
+balanceLabel.Text += balance.ToString();
+</pre>
+			<li>Do the same for the other two labels and run the application to see the results.</li>
+			<li>
+				As a final step, modify the <code>balanceLabel</code> to display currency since it is money. 
+                You could just append a <code>"$"</code> into the string, but it turns out that C# has a built-in
+                feature to display currency (and other values) automatically, using the culture of the user. 
+                You do this by passing a <code>string</code> parameter to the <code>ToString</code> method indicating
+                how we want it formatted - currency is requested using <code>balance.ToString("C");</code>.
+                Modify the statement and run the application again to see the results.
+			</li>
+		</ol>
+		<p>
+			<a href="#" onclick="toggleCode(this, 'rootPage'); return false;" class="uiitem">Show Code</a><div id="rootPage" style="display:none;">
+<pre class="prettyprint">
+// TODO: get account information
+Bank bank = new Bank();
+double balance;
+DateTime lastDeposit;
+bool activeAccount = bank.GetAccountInfo( "1021379", out balance, out lastDeposit );
+// TODO: add information to the three labels
+activeLabel.Text += activeAccount.ToString();
+balanceLabel.Text += balance.ToString("C");
+lastDepositLabel.Text += lastDeposit.ToString();
+</pre>
+			</div>
+		</p>
+
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+		<h1>Summary</h1>
+		<p>
+			In this lab exercise, you modified the OutParameters application by using several out parameters to retrieve an account
+            balance and last deposit. You also updated three labels to display the results. 
+            Next you will use constructors to bank account details that include type of account, balance, and date and time of last deposit.
+		</p>
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+	</section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2017 Microsoft, Xamarin</footer>
+</body>
+</html>

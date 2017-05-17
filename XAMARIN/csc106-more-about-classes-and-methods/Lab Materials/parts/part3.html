@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 3: Add constructors to your class</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Learning C# with Xamarin: More about classes and methods</header>
+
+   	<section id="main">
+
+		<h1 id="page-title"></h1>
+
+		<h2>Duration</h2>
+		<p>20 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+
+		<h2 id="goals">Lab goals</h2>
+		<p>
+			In this final exercise, you will modify an existing Xamarin.Forms application to add three constructors to the <code>BankAccount</code> class. 
+            The three different constructors will initialize the data in the class. To complete the exercise, you will perform the following steps:
+      </p>
+
+
+      <ol>
+         <li>Add a default <code>BankAccount</code> constructor to initialize the properties to default values.</li>
+         <li>Add a second constructor that takes a string parameter to initialize the account name.</li>
+         <li>Add a third constructor that takes three parameters to initialize the balance, last deposit date, and account name.</li>
+         <li>Chain two of the constructors into the third to share the initialization logic.</li>
+       </ol>
+
+      <p>When you are finished, your application will look like:</p>
+      <img src="./res/images/completed-lab3.PNG" />
+
+      <h2>Required Assets</h2>
+      <p>
+          The provided <strong>Resources</strong> folder for this part contains a subfolder named <strong>Start</strong> with a solution
+          you will use as starter code. The <strong>Completed</strong> subfolder contains a completed project you can use to check your work.
+      </p>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+		<h1 id="steps">Steps</h1>
+      <p>
+         Try to use the picture and above steps to complete the lab exercise, referring to the slides if you need any help in creating the bank account application.
+         You can also use the following step-by-step instructions to fill in any knowledge gaps.
+      </p>
+
+		<h2>Define a constructor to initialize the Bank Account</h2>
+		<ol>
+         <li>
+            Open the <b>Constructors.sln</b> solution from the <b>Resources/Start</b> folder.
+         </li>
+         
+         <li>
+            Open the <b>BankAccount.cs</b> file and examine the contents. It has some properties to hold basic account information and a method that returns
+             a string representing all the data in the account.
+         </li>
+
+         <li>
+            Run the app to see the starting output - it should show three lines, with no real data. As with the other labs we've done, the UI code is all
+             in the <b>MainPage.cs</b> file. You can open the file to see how the three accounts are created currently. Notice as well, that this is all
+             done in the <em>constructor</em> for the <code>MainPage</code>! You've been using constructors already, we just hadn't really examined them yet!
+         </li>
+
+         <li>
+            Flip back to the <code>BankAccount</code> class. Notice there are no constructors defined for the class. Remember from the lecture that C# will
+            automatically create one for you (a default constructor that takes no parameters). This is what is allowing us to create the <code>BankAccount</code>
+            in the <b>MainPage.cs</b> file.
+         </li>
+
+         <li>
+            Add a constructor that takes a <code>string</code> for the account name. Recall that the syntax for a constructor is
+            <code>public ClassName ( ... parameters ... )</code>. In the code for the constructor, assign the parameter to the <code>AccountName</code>
+             property and initialize the other properties to some values. Here's an example, feel free to set the other properties to different values if you like.
+         </li>
+
+<pre class="codeblock prettyprint">
+public BankAccount ( string accountName )
+{
+   AccountName = accountName;
+   Balance = 0;
+   LastDeposit = DateTime.Now;
+   IsActive = true;
+}
+</pre>
+
+         <li>
+            Try to build the application. What happens? It should <em>fail</em> to compile now because you do not have a matching constructor that takes no
+             parameters for <code>BankAccount</code>. Since you added a constructor, C# is no longer creating the default constructor for us. Let's fix that.
+         </li>
+
+         <li>
+            Open the <b>MainPage.cs</b> file and change each of the lines that are creating the <code>BankAccount</code> to pass a string - you can use
+             any value you like, for example <code>"College Fund"</code> or <code>"Savings"</code>.
+         </li>
+
+         <li>
+            Build and run the application - it should succeed this time and show you output with the proper name of the account.
+         </li>
+      </ol>
+
+      <h2>Adding multiple constructors</h2>
+      <p>
+         Another way you could solve the compile error you got earlier is to add an explicit default constructor to the <code>BankAccount</code>.
+      </p>
+
+      <ol>
+         <li>
+            Open the <b>BankAccount.cs</b> file.
+         </li>
+         <li>
+            Add a second constructor that takes no parameters - remember this is called the <em>default</em> constructor.
+             It should also be public and initialize the account with empty values like this:
+         </li>
+
+<pre class="codeblock prettyprint">
+// Default constructor
+public BankAccount ( )
+{
+   AccountName = "Unknown Account";
+   Balance = 0;
+   LastDeposit = new DateTime ( );
+   IsActive = false;
+}
+</pre>
+         <li>
+            Open the <b>MainPage.cs</b> file and change the first <code>BankAccount</code> to use your default constructor - just remove the string you added earlier.
+         </li>
+
+         <li>
+            Run the app and notice that the first account is now printed differently - with different values.
+         </li>
+
+         <li>
+            Add a final constructor which takes all three parameters:
+            <ul class="indent-none">
+               <li><code>double balance</code></li>
+               <li><code>DateTime lastDeposit</code></li>
+               <li><code>string accountName</code></li>
+            </ul>
+            Use the passed values to initialize the account properties.
+         </li>
+
+<p class="indent-none"><a href="#" onclick="toggleCode(this, 'p-constructor'); return false;" class="uiitem">Show Code</a><div id="p-constructor" style="display:none;">
+<pre class="prettyprint">
+public BankAccount ( 
+   double balance, 
+   DateTime lastDeposit, 
+   string accountName )
+{
+   Balance = balance;
+   LastDeposit = lastDeposit;
+   AccountName = accountName;
+   IsActive = true;
+}
+</pre></div></p>
+
+         <li>
+            Open the <b>MainPage.cs</b> file and change the final <code>BankAccount</code> to use your full constructor, passing all three values; the lab exercise uses:
+            <ul class="indent-none">
+               <li>50000</li>
+               <li>new DateTime ( 2014, 7, 10, 15, 0, 0 )</li>
+               <li>"Checking"</li>
+            </ul>
+         </li>
+
+         <li>
+            Run the application and see the results, it should look something like:
+         </li>
+      </ol>
+      <img src="./res/images/final-output-lab3.PNG" />
+
+      <h2>Chaining constructors</h2>
+      <p>
+         What you have currently is perfectly fine; however, you might have noticed we are repeating code in each of the constructors. 
+          This is generally considered a bad practice in programming because there is no automatic way to keep the three blocks of code
+          synchronized if people start making changes. However, C# has a nifty trick which can help here - you can <em>chain</em> the
+          constructors so you pass one constructor onto another. This is particularly valuable when you have a full constructor that
+          takes a bunch of parameters and then a few constructors which do not, but perform the same initialization.
+      </p>
+
+      <ol>
+         <li>
+            Open the <b>BankAccount.cs</b> file and use the <code>: this(....)</code> syntax on your default constructor to call to
+             the final constructor that takes three parameters. Here's what it looks like in code, notice you can remove
+             <em>most of the code</em> that you used earlier? That's because the code in the other constructor will do the initialization
+             for you. You still want to set the <code>IsActive</code> property to <code>false</code> however, because the other
+             constructor assumes the account is active which you don't want here.
+         </li>
+
+<pre class="codeblock prettyprint">
+public BankAccount ( )
+      : this(0, new DateTime(), "Unknown Account")
+{
+   IsActive = false;
+}
+</pre>
+         <li>
+            Do the same for the constructor that takes an account name.
+         </li>
+
+<p class="indent-none"><a href="#" onclick="toggleCode(this, 'c-constructor'); return false;" class="uiitem">Show Code</a><div id="c-constructor" style="display:none;">
+<pre class="prettyprint">
+public BankAccount ( string accountName )
+      : this ( 0, DateTime.Now, accountName )
+{
+}
+</pre></div></p>
+
+         <li>
+            If you have time, try using default parameters to initialize the balance so you don't need to pass zero each time. 
+             Remember that default parameters need to be at the <em>end</em> of the parameter list so you'll have to reorder
+             the parameters (and fix your code in <b>MainPage.cs</b>). The final solution has this code in place if you want to check your work.
+         </li>
+      </ol>
+
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+      <h1>Summary</h1>
+      <p>
+   		In this lab exercise, you add constructors to pass parameters to BankAccount balance, lastDeposit and AccountName. 
+          You also added a default constructor to declare bank activity - great job!
+     </p>
+
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+
+	</section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2017 Microsoft, Xamarin</footer>
+</body>
+</html>

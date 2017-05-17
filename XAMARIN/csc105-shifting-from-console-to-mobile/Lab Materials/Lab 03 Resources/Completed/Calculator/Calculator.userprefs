@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{A7D23AF3-4E25-4E4C-AB7C-93F5C7053691}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Calculator/Calculator.iOS/Main.cs">
+    <Files>
+      <File FileName="Calculator/Calculator.iOS/AppDelegate.cs" Line="30" Column="6" />
+      <File FileName="Calculator/Calculator.iOS/Main.cs" Line="18" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Calculator.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2BAC6BA4-D201-4ED4-BE62-249FDBFE1E56" />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>Calculator/Calculator.WinPhone/Calculator.WinPhone.csproj</String>
+  </DisabledProjects>
+</Properties>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Exercise 1: Create and run a new Xamarin.Forms project</title>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+</head>
+
+<body>
+    <!-- Use the same title as the StartHere -->
+    <header>Learning C# with Xamarin: Shifting from Console to Mobile</header>
+
+   	<section id="main">
+
+		<h1 id="page-title"></h1>
+
+		<h2>Duration</h2>
+		<p>10 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+
+		<h2 id="goals">Lab goals</h2>
+
+		<p>
+			In this exercise you will create a new Xamarin.Forms application using the built-in project template in Xamarin Studio (you can also use Visual Studio on Windows, the instructions are similar). You will then choose an available platform and run the application using an emulator.
+    </p>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+
+		<h1 id="steps">Steps</h1>
+		<p>
+      This is a group exercise, intended to be done with the instructor or the video of the class, however if you would like to walk through the exercise on your own, the required step-by-step instructions for completing this exericise are below. You can also utilize the high-level goals defined above to work through the code, relying on the below instructions to fill in any necessary details.
+		</p>
+
+		<h2>Create a new Xamarin.Forms application</h2>
+		<ol>
+      <li>
+      Launch either Xamarin Studio (Windows or Mac OS X) or Visual Studio (Windows) and create a new solution through <b>File > New > Solution</b> or by clicking the <b>New Solution...</b> link on the Welcome screen shown below to create a new solution.         
+      </li>
+
+      <img class="indent-none" src="./res/images/new-solution.png" />
+
+      <li>
+      In the New Solution dialog, select the section on the left titled <em>Cross-platform/App</em>, and select the <b>Blank App (Xamarin.Forms)</b> project in the main section of the dialog as shown below and click Next.
+      </li>
+
+      <img src="./res/images/new-solution-dialog.png" width="777" height="561" class="indent-none"/>
+
+      <li>
+      Give the App the name <b>Calculator</b> and select the <strong>Use Portable Class Library</strong> for Shared Code and click Next.<img src="./res/images/new-solution-dialog2.png" width="777" height="561" class="indent-none"/>
+      </li>
+      <li>Give the project the name <b>Calculator</b> - this will also fill out the solution name with the same value, this is fine but if you can change it if you like as well. Make sure to select a location that you can remember and get to fairly easily and then click <strong>Next</strong>.<img src="./res/images/new-solution-dialog3.png" width="777" height="561" class="indent-none"/>
+      
+      </li>
+      
+
+      <div class="hintblock">
+      If you are running Windows, a common issue that comes up periodically is that the filenames and directories created can sometimes exceed the 256 character limit enforced by Windows if you place the solution into a deep folder. Consider placing it onto the desktop or a short path if you encounter this problem.
+      </div>
+
+      <li>
+      Once the application has been created, you will find multiple projects listed in the solutuion explorer - depending on the IDE you are using (Visual Studio or Xamarin Studio), and which operating system you are using, the number of projects will be slightly different. However, you will always have at least two:
+        <ul class="ident-none">
+          <li>A <em>portable</em> project which will hold all your application code. This is almost always the first project in the list and might have a suffix of <em>(Portable)</em> on it.</li>
+          <li>One or more <em>platform</em> projects which are the actual applications that will run on each platform you create the application for - iOS, Android and Windows Phone. Again, your environment may not support all three project styles, so depending on your operating system (Windows or Mac OS X) and your IDE, the platform projects will change.</li>
+        </ul>
+        Here you can see the project on a Mac OS X computer with Xamarin Studio supports iOS and Android.
+      The <strong>UITests </strong>project is an empty <strong>NUnit</strong> project which lets you build acceptance tests with Xamarin.UITest.</li>
+
+      <img class="indent-none" src="./res/images/project-list.png" width=""/>
+      
+      <li>If you look carefully, you will notice that one of the projects (the first one in the screen above) is in <b>Bold</b>. This is the <em>startup project</em> which is the one that will be started if we ask the IDE to build and run the application.
+      </li>
+      
+      <li>It turns out that the portable project is not actually something that can run on it's own - we have to select one of the platform projects and make one of them the startup project. To do that, <b>right-click</b> on the project you want to run (iOS, Android, or Windows Phone) and select <b>Set as Startup Project</b>. You can also click on the gear icon next to the project to get the same menu as shown below. Once you select one of these projects, it will switch to be the bold project.
+      </li>
+
+      <img class="indent-none" src="./res/images/change-startup-project.png" width=""/>
+    </ol>
+
+    <p>
+    We now will execute the application in one of the supported environments. You can pick any of the platforms you want, or even more than one if you'd like to try different mobile operating systems and emulators. Click the links to jump to the specific instructors for the platform you want to execute:
+    </p>
+
+    <ul>
+      <li><a href="#android">Android</a></li>
+      <li><a href="#ios">iOS (Mac only)</a></li>
+      <li><a href="#winphont">Windows Phone (Windows only)</a></li>
+    </ul>
+
+
+    <h2 id="android">Run the Android application</h2>
+    <p>
+    In this section, we will run the Android version of our application. If you do not want to try the Android version, then skip ahead to one of the other versions. We will be using an emulator, but you can also use a <a href="http://developer.xamarin.com/guides/android/getting_started/installation/set_up_device_for_development/">physical device if you have one</a> with a few setup steps.
+    </p>
+    <ol>
+      <li>
+      Android requires an Android emulator to execute the program. The easiest one to use is the <a href="http://xamarin.com/android-player">Xamarin Android Player</a>, if you have not installed it yet, go to <a href="http://xamarin.com/android-player">http://xamarin.com/android-player</a>, scroll down to the bottom of the page and download it for either OS X or Windows.
+      </li>
+      <li>If you'd like to read about how to use the emulator, check out the <a href="http://developer.xamarin.com/guides/android/getting_started/installation/android-player/">documentation online</a>.</li>
+      <li>Once it's installed, go ahead and run it using either Finder (OS X) or your Start Menu/Screen in Windows. The first time it is executed, it will show you the device manager and allow you to download an image.</li>
+
+      <img class="indent-none" src="./res/images/device-manager.png" />
+
+      <li>Select the Nexus 4 (KitKat) image and download it by clicking the arrow next to it.</li>
+      <li>
+      Once it's installed, you can run the emulator by clicking the <b>Play</b> button next to the installed image in the device manager and the player will launch. You are then ready to run your app!
+      </li>
+
+      <img class="indent-none" src="./res/images/android-emulator.png" />
+
+      <li>
+      In your IDE, make sure the Android project is the startup project (it should be in bold), if not, right-click on it and set it as the startup.
+      </li>
+
+      <h3 class="indent-none">Visual Studio</h3>
+      <li>Next, pull down the devices list in the toolbar and locate your Nexus 4 emulator. If you are using Visual Studio and you don't see a list of devices, make sure the Android toolbar is visible by right-clicking on the toolbar area and clicking on Android.
+      </li>
+
+      <table class="indent-none">
+        <tr>
+          <td><img class="indent-none" src="./res/images/android-emulator-vs.png" /></td>
+          <td><img class="indent-none" src="./res/images/android-menu.png" /></td>
+        </tr>
+      </table>
+
+      <h3 class="indent-none">Xamarin Studio</h3>
+      <li>Next, pull down the devices list in the toolbar and locate your Nexus 4 emulator. 
+      </li>
+
+      <img class="indent-none" src="./res/images/android-emulator-xs.png" width=""/>
+
+      <li>Click the <b>Play</b> button in the toolbar to launch the application in the emulator.</li>
+
+      <table class="indent-none">
+        <tr>
+          <td width="258"><img src="./res/images/play-vs.png" /></td>
+          <td width="265"><img src="./res/images/play-xs.png"/></td>
+        </tr>
+      </table>
+
+      <li>It should launch the emulator (if it wasn't already running), install your application (which make take 30-60 seconds the first time) and then run it. You should see something like:</li>
+
+      <img class="indent-none" src="./res/images/and-running-app.png" />
+
+    </ol>
+    
+    <h2 id="ios">Run the iOS application</h2>
+    <p>
+    In this section, we will run the iOS version of our application. If you do not want to try the iOS version, then skip ahead to one of the other versions. We will be using the built-in iOS Simulator that comes with Apple's tools, but you can also use a <a href="http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/">physical device if you have one</a> with a few setup steps.
+    </p>
+
+    <ol>
+      <li>
+      In order to build iOS applications, you have to install the Apple developer tools, which is all packaged up in their development environment - XCode. You can install XCode using the Mac App Store through the <img style="display: inline; margin-left:0px; margin-right:0px; vertical-align: -10px; margin-top:0px; margin-bottom:10px;" height="18" width="16" src="./res/images/apple-icon.png"> <b>> App Store ...</b> menu item. Search for XCode and click the <b>Free</b> button to install it. It's quite large and may take a while to install onto your machine.
+      </li>
+      <li>Once it's there, you will have access to the iOS Simulator. This can launched automatically by Xamarin Studio when you are running an iOS application.</li>
+      <li>
+      Make sure the iOS application is selected as the startup project and then select the iPhone 4s simulator from the devices drop-down.
+      </li>
+
+      <img class="indent-none" src="./res/images/select-iphone-simulator.png" />
+
+      <li>Click the <b>Play</b> button in the toolbar to launch the application in the emulator.</li>
+    
+      <img class="indent-none" src="./res/images/play-xs.png" />
+
+      <li>It should launch the iOS simulator (if it wasn't already running), install your application and then run it. You should see something like:</li>
+
+      <img class="indent-none" src="./res/images/iphone-simulator.png" />
+    </ol>
+
+    <h2 id="winphone">Run the Windows Phone application</h2>
+    <p>
+    In this section, we will run the Windows Phone version of our application. If you do not want to try the WinPhone version, then skip ahead to one of the other versions. We will be using the built-in Windows Phone Emulator that comes with Microsoft Visual Studio, but you can also use a <a href="http://msdn.microsoft.com/en-us/library/windows/apps/ff402565(v=vs.105).aspx">physical device if you have one</a> with a few setup steps.
+    </p>
+
+    <ol>
+      <li>
+      In order to build the Windows Phone application, you must be running on Windows and be using Visual Studio 2013. In addition, you must have the Windows Phone software development kit (SDK) installed. This is an option when you install Visual Studio, if you did not select it, you will need to reinstall Visual Studio (which will modify your installation) and select the Windows Phone 8.0 SDK. This may require a reboot in order to turn on Hyper-V which is used by the emulator. <a href="https://dev.windows.com/en-us/develop/download-phone-sdk">Here are some additional updates from Microsoft</a> you can install if you like.
+      </li>
+      <li>Once it's there, you will have access to the Windows Phone Emulator. This can launched automatically by Visual Studio when you are running an Windows Phone application.</li>
+      <li>
+      Make sure the Windows Phone application is selected as the startup project and then select the <b>Emulator 8.1 WVGA 4 inch 512M</b> from the devices drop-down, this is the default but you can verify it by clicking the arrow on the button.
+      </li>
+
+      <img class="indent-none" src="./res/images/win-phone-select.png" />
+
+      <li>Click the <b>Play</b> button in the toolbar to launch the application in the emulator.</li>
+    
+      <img class="indent-none" src="./res/images/play-winphone.png" />
+
+      <li>It should launch the Windows Phone Emulator (if it wasn't already running), install your application and then run it, the launch process may take a while as it starts up a virtual machine to run Windows in. You should see something like:</li>
+
+      <img class="indent-none" src="./res/images/winphone-emulator.png" />
+    </ol>
+
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+
+  <h1>Summary</h1>
+   <p>
+		In this lab exercise, you created a new Xamarin.Forms application and ran it in one or more simulated environments. In the next exercise, we will begin to modify this application.
+ </p>
+
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+
+	</section>
+
+    <script src="./res/js/jquery.min.js"></script>
+    <script src="./res/js/prettify.js"></script>
+    <script src="./res/js/script.js"></script>
+
+    <footer>Copyright (C) 2017 Xamarin</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+Snippets Module 8
+-----------------
+
+Demo 2
+------
+
+PieViewModel
+------------
+
+public class PieViewModel
+    {
+        public int PieId { get; set; }
+        public string Name { get; set; }
+        public string ShortDescription { get; set; }
+        public decimal Price { get; set; }
+        public string ImageThumbnailUrl { get; set; }
+    }
+	
+PieDataController code
+----------------------
+
+public IEnumerable<PieViewModel> LoadMorePies()
+{
+	IEnumerable<Pie> dbPies = null;
+
+	dbPies = _pieRepository.Pies.OrderBy(p => p.PieId).Take(10);
+
+	List<PieViewModel> pies = new List<PieViewModel>();
+
+	foreach (var dbPie in dbPies)
+	{
+		pies.Add(MapDbPieToPieViewModel(dbPie));
+	}
+	return pies;
+}
+
+private PieViewModel MapDbPieToPieViewModel(Pie dbPie)
+{
+	return new PieViewModel()
+	{
+		PieId = dbPie.PieId,
+		Name = dbPie.Name,
+		Price = dbPie.Price,
+		ShortDescription = dbPie.ShortDescription,
+		ImageThumbnailUrl = dbPie.ImageThumbnailUrl
+	};
+}
+		
+		
+Script code
+-----------
+

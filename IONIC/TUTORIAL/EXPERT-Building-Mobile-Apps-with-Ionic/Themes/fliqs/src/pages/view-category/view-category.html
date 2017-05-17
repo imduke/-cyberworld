@@ -1,0 +1,26 @@
+<ion-header class="category-header">
+  <ion-navbar transparent>
+    <ion-title>{{category.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchInput()" [formControl]="searchControl" placeholder="search movies..."></ion-searchbar>
+
+	<div *ngIf="searching" class="spinner-container">
+		<ion-spinner></ion-spinner>
+	</div>
+
+	<ion-card *ngFor="let movie of movies">
+		<button ion-button icon-only (click)="toggleFavouriteMovie(movie)">
+		  	<ion-icon *ngIf="!movie.favourite" name="heart-outline"></ion-icon>
+		  	<ion-icon *ngIf="movie.favourite" name="heart"></ion-icon>
+		</button>
+	    <img tappable (click)="showMovieDetail(movie)" [src]="movie.image" />
+	    <ion-card-content>
+	    	<ion-card-title>{{movie.title}}</ion-card-title>
+	  </ion-card-content>
+	</ion-card>	
+
+</ion-content>
