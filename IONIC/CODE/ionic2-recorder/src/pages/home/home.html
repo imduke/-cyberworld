@@ -9,16 +9,41 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col><button ion-button (click)="startRecording()">Start Recording <ion-icon ios="ios-recording" md="md-recording"></ion-icon></button></ion-col><ion-col><button ion-button (click)="pauseRecording()">Pause Recording<ion-icon name="pause"></ion-icon></button></ion-col>
+      <ion-col>
+        <button ion-button small (click)="startRecording()">
+          <ion-icon ios="ios-recording" md="md-recording"></ion-icon> Start Recording</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button small (click)="pauseRecording()">
+          <ion-icon name="pause"></ion-icon> Pause Recording</button>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col><button ion-button (click)="resumeRecording()">Resume Recording</button></ion-col><ion-col><button ion-button (click)="stopRecording()">Stop Recording</button></ion-col>
+      <ion-col>
+        <button ion-button small (click)="resumeRecording()">
+          <ion-icon name="refresh-circle"></ion-icon> Resume Recording</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button small (click)="stopRecording()">
+          <ion-icon name="hand"></ion-icon> Stop Recording</button>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col><button ion-button (click)="startPlayback()">Start Playback</button></ion-col><ion-col><button ion-button (click)="pausePlayback()">Pause Playback</button></ion-col>
+      <ion-col>
+        <button ion-button small (click)="startPlayback()">
+          <ion-icon name="musical-notes"></ion-icon> Start Playback</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button small (click)="pausePlayback()">
+          <ion-icon name="ios-pause-outline"></ion-icon> Pause Playback</button>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col><button ion-button (click)="stopPlayback()">Stop Playback</button></ion-col><ion-col></ion-col>
+      <ion-col>
+        <button ion-button small (click)="stopPlayback()">
+          <ion-icon name="ios-hand-outline"></ion-icon> Stop Playback</button>
+      </ion-col>
+      <ion-col></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
