@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      @ionic-native/media xmpol
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col><button ion-button (click)="startRecording()">Start Recording <ion-icon ios="ios-recording" md="md-recording"></ion-icon></button></ion-col><ion-col><button ion-button (click)="pauseRecording()">Pause Recording<ion-icon name="pause"></ion-icon></button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button ion-button (click)="resumeRecording()">Resume Recording</button></ion-col><ion-col><button ion-button (click)="stopRecording()">Stop Recording</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button ion-button (click)="startPlayback()">Start Playback</button></ion-col><ion-col><button ion-button (click)="pausePlayback()">Pause Playback</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button ion-button (click)="stopPlayback()">Stop Playback</button></ion-col><ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
