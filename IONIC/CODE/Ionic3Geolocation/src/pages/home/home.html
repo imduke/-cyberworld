@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      HTML5-GeoLocation
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label floating>Direction</ion-label>
+    <ion-input type="text" [(ngModel)]="destination"></ion-input>
+  </ion-item>
+</ion-list>
+<button ion-button block (click)="calculateAndDisplayRoute()">Get Direction</button>
+<div id="map"></div>
+</ion-content>
