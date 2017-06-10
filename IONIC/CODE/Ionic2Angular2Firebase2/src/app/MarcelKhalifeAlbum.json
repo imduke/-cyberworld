@@ -1,0 +1,423 @@
+{
+  "album": [
+    {
+      "album_name": "Taqasim",
+      "album_native_name": "",
+      "album_play_time": 61.01,
+      "album_image": "Taqasim_image.jpg",
+      "album_price_by_format": [
+        {
+          "format": "CD",
+          "price": 15.99
+        },
+        {
+          "format": "MP3",
+          "price": 4.99
+        },
+        {
+          "format": "MP4",
+          "price": 4.99
+        }
+      ],
+      "album_track_collection_by_cd": [
+        {
+          "cd_number": 1,
+          "total_minutes": 61.01,
+          "track": [
+            {
+              "track_number": "1",
+              "track_name": "Part One",
+              "track_play_time": 19.33,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 3.99
+            },
+            {
+              "track_number": "2",
+              "track_name": "Part Two",
+              "track_play_time": 20.28,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 3.99
+            },
+            {
+              "track_number": "3",
+              "track_name": "Part Three",
+              "track_play_time": 20.47,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 3.99
+            }
+          ]
+        }
+      ],
+      "album_copyright": [
+        "Nagam Records 2007"
+      ]
+    },
+    {
+      "album_name": "caress",
+      "album_native_name": "",
+      "album_play_time": 54.4,
+      "album_image": "Taqasim_image.jpg",
+      "album_price_by_format": [
+        {
+          "format": "CD",
+          "price": 15.99
+        },
+        {
+          "format": "MP3",
+          "price": 4.99
+        },
+        {
+          "format": "MP4",
+          "price": 4.99
+        }
+      ],
+      "album_track_collection_by_cd": [
+        {
+          "cd_number": 1,
+          "total_minutes": 54.4,
+          "track": [
+            {
+              "track_number": "1",
+              "track_name": "Caress",
+              "track_play_time": 7.52,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "2",
+              "track_name": "Al Hambra",
+              "track_play_time": 2.59,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "3",
+              "track_name": "Granada",
+              "track_play_time": 6.33,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "4",
+              "track_name": "Tents",
+              "track_play_time": 3.49,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "5",
+              "track_name": "With All the Love",
+              "track_play_time": 4.18,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "6",
+              "track_name": "Popular Cafe",
+              "track_play_time": 7.07,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "7",
+              "track_name": "Chaza",
+              "track_play_time": 8.36,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "8",
+              "track_name": "Samai Bayati",
+              "track_play_time": 4.48,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "9",
+              "track_name": "Passport",
+              "track_play_time": 8.19,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            }
+          ]
+        }
+      ],
+      "album_copyright": [
+        "Nagam Records 2007"
+      ]
+    },
+    {
+      "album_name": "fall of the moon",
+      "album_native_name": "",
+      "album_play_time": 61.01,
+      "album_image": "Taqasim_image.jpg",
+      "album_price_by_format": [
+        {
+          "format": "CD",
+          "price": 15.99
+        },
+        {
+          "format": "MP3",
+          "price": 4.99
+        },
+        {
+          "format": "MP4",
+          "price": 4.99
+        }
+      ],
+      "album_track_collection_by_cd": [
+        {
+          "cd_number": 1,
+          "total_minutes": 68.47,
+          "track": [
+            {
+              "track_number": "1",
+              "track_name": "the pigeons fly",
+              "track_play_time": 9.4,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "2",
+              "track_name": "and we love life",
+              "track_play_time": 9.43,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "3",
+              "track_name": "the stranger's bed",
+              "track_play_time": 4.5,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "4",
+              "track_name": "oh, my proud wound",
+              "track_play_time": 3.4,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "5",
+              "track_name": "mohammad",
+              "track_play_time": 9.02,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "6",
+              "track_name": "houriyeh's instructions",
+              "track_play_time": 13.07,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 3.99
+            },
+            {
+              "track_number": "7",
+              "track_name": "jahar kah",
+              "track_play_time": 2.13,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "8",
+              "track_name": "now, in exile",
+              "track_play_time": 12.13,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 3.99
+            },
+            {
+              "track_number": "9",
+              "track_name": "two guitars",
+              "track_play_time": 5.39,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            }
+          ]
+        },
+        {
+          "cd_number": 2,
+          "total_minutes": 48.01,
+          "track": [
+            {
+              "track_number": "1",
+              "track_name": "fall of the moon",
+              "track_play_time": 7.23,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "2",
+              "track_name": "a song on my mind",
+              "track_play_time": 5,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "3",
+              "track_name": "remember",
+              "track_play_time": 1.55,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "4",
+              "track_name": "her eyes",
+              "track_play_time": 3.55,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "5",
+              "track_name": "the poem of the land",
+              "track_play_time": 3.55,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "6",
+              "track_name": "waltz for rita's winter",
+              "track_play_time": 8.35,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "7",
+              "track_name": "palestinian mawwal",
+              "track_play_time": 4.29,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            },
+            {
+              "track_number": "8",
+              "track_name": "the most beautiful love",
+              "track_play_time": 6.43,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 2.99
+            },
+            {
+              "track_number": "9",
+              "track_name": "in damascus",
+              "track_play_time": 4.27,
+              "format": [
+                "MP3",
+                "MP4"
+              ],
+              "track_price": 1.99
+            }
+          ]
+        }
+      ],
+      "album_copyright": [
+        "Nagam Records 2007"
+      ]
+    }
+  ],
+  "customer": [
+    {
+      "customerId": 1,
+      "firstName": "John",
+      "lastName": "Hilberts",
+      "login": "john@cybersystem.com.au"
+    },
+    {
+      "customerId": 2,
+      "firstName": "Sarah",
+      "lastName": "Robertson",
+      "login": "sarah@cybersystem.com.au"
+    },
+    {
+      "customerId": 3,
+      "firstName": "Ronn",
+      "lastName": "Shark",
+      "login": "ronn@cybersystem.com.au"
+    }
+  ]
+}
