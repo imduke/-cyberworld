@@ -10,10 +10,10 @@ import {Observable} from 'rxjs/Observable';
 })
 export class HomePage {
   user: Observable<firebase.User>;
-  billList: FirebaseListObservable<any>;
+  albumList: FirebaseListObservable<any>;
 
  constructor(public afAuth: AngularFireAuth, public afDatabase: AngularFireDatabase) {
-    this.billList = afDatabase.list('/bills');
+    this.albumList = afDatabase.list('/album');
     this.user = this.afAuth.authState;
 }
 
@@ -25,8 +25,8 @@ logout() {
     this.afAuth.auth.signOut();
 }
 
-Send(billName: string, billAmount: number, billDueDate: string, billPaid: boolean) {
-    this.billList.push({"name":billName,"amount":billAmount,"dueDate":billDueDate,"paid":billPaid});
+Send(albumName: string, billAmount: string, albumPlayTime: string, albumImage: string) {
+    this.albumList.push({"album_name":albumName,"album_play_time":albumPlayTime,"album_image":albumImage});
 }
 
 }

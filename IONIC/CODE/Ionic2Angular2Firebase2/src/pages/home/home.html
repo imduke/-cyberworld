@@ -1,6 +1,6 @@
 <ion-header> 
   <ion-navbar>
-     <ion-title>Bills</ion-title>
+     <ion-title>Albums</ion-title>
    </ion-navbar>
 </ion-header> 
 <ion-content padding> 
@@ -9,11 +9,11 @@
     <button primary (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
   </div>
   <ion-list>
-    <ion-item *ngFor="let bill of billList | async">
+    <ion-item *ngFor="let album of albumList | async">
         <ion-icon name="timer" danger item-left></ion-icon> 
-        <h2>{{bill.name}}</h2>
-        <h3>Total: <strong>${{bill.amount}}</strong></h3>
-        <p>Pay before: <strong>{{bill.dueDate}}</strong></p>
+        <h2>{{album.album_name}}</h2>
+        <h3>Play time: <strong>${{album.album_play_time}}</strong></h3>
+        <p>Image: <strong>{{album.album_image}}</strong></p>
     </ion-item> 
   </ion-list>
 </ion-content>

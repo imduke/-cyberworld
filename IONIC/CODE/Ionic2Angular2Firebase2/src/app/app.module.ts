@@ -15,10 +15,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 export const firebaseConfig = {
-      apiKey: "AIzaSyCw1SKmz1Bu2ibncu5Bxd1sZgR1taV7ujM",
-      authDomain: "aftutorial-ef306.firebaseapp.com",
-      databaseURL: "https://aftutorial-ef306.firebaseio.com",
-      storageBucket: "aftutorial-ef306.appspot.com"
+    apiKey: "AIzaSyDROApYBuzF3tosZ5nqwXaGN2PhKbkW6Bo",
+    authDomain: "marcelkhalife-fb182.firebaseapp.com",
+    databaseURL: "https://marcelkhalife-fb182.firebaseio.com",
+    projectId: "marcelkhalife-fb182",
+    storageBucket: "marcelkhalife-fb182.appspot.com",
+    messagingSenderId: "232594549704"
 };
 
 @NgModule({
