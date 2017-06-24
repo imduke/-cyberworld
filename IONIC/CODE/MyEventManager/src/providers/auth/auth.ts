@@ -31,7 +31,7 @@ public userProfileRef:firebase.database.Reference;
     return this.fireAuth.sendPasswordResetEmail(email);
   }
 
-  logoutUser(email:string):firebase.Promise<void>{
+  logoutUser():firebase.Promise<void>{
     this.userProfileRef.child(this.fireAuth.currentUser.uid).off();
     return this.fireAuth.signOut();
   }

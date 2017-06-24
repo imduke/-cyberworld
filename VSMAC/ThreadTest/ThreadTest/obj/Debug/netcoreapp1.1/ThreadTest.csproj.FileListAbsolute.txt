@@ -1,0 +1,9 @@
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/bin/Debug/netcoreapp1.1/ThreadTest.deps.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/bin/Debug/netcoreapp1.1/ThreadTest.runtimeconfig.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/bin/Debug/netcoreapp1.1/ThreadTest.runtimeconfig.dev.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/bin/Debug/netcoreapp1.1/ThreadTest.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/bin/Debug/netcoreapp1.1/ThreadTest.pdb
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/obj/Debug/netcoreapp1.1/ThreadTest.csproj.CoreCompileInputs.cache
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/obj/Debug/netcoreapp1.1/ThreadTest.AssemblyInfo.cs
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/obj/Debug/netcoreapp1.1/ThreadTest.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/ThreadTest/ThreadTest/obj/Debug/netcoreapp1.1/ThreadTest.pdb

@@ -12,8 +12,11 @@ export class HomePage {
   }
 
   goLogOff(){
-    this.authProvider.logoutUser('imduke@gmail.com');
+    this.authProvider.logoutUser();
     this.navCtrl.push(LoginPage);
+  }
+
+  goToProfile(){ this.navCtrl.push('profile');
   }
 
 }

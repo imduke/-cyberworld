@@ -1,0 +1,10 @@
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/bin/Debug/netcoreapp1.1/DesignPattern.deps.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/bin/Debug/netcoreapp1.1/DesignPattern.runtimeconfig.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/bin/Debug/netcoreapp1.1/DesignPattern.runtimeconfig.dev.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/bin/Debug/netcoreapp1.1/DesignPattern.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/bin/Debug/netcoreapp1.1/DesignPattern.pdb
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/obj/Debug/netcoreapp1.1/DesignPattern.csprojResolveAssemblyReference.cache
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/obj/Debug/netcoreapp1.1/DesignPattern.csproj.CoreCompileInputs.cache
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/obj/Debug/netcoreapp1.1/DesignPattern.AssemblyInfo.cs
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/obj/Debug/netcoreapp1.1/DesignPattern.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/DesignPattern/DesignPattern/obj/Debug/netcoreapp1.1/DesignPattern.pdb
