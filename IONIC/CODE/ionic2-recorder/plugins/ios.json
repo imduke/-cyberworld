@@ -1,0 +1,41 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "cordova-plugin-media": {
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "au.com.cybersys.audiorecorder"
+        }
+    }
+}

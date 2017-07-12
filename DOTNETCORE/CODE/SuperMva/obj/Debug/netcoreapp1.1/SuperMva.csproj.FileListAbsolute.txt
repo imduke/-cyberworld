@@ -1,0 +1,8 @@
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/bin/Debug/netcoreapp1.1/SuperMva.deps.json
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/bin/Debug/netcoreapp1.1/SuperMva.runtimeconfig.json
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/bin/Debug/netcoreapp1.1/SuperMva.runtimeconfig.dev.json
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/bin/Debug/netcoreapp1.1/SuperMva.dll
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/bin/Debug/netcoreapp1.1/SuperMva.pdb
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/obj/Debug/netcoreapp1.1/SuperMva.AssemblyInfo.cs
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/obj/Debug/netcoreapp1.1/SuperMva.dll
+/Users/chowdhza/Documents/BORN2CODE/DOTNETCORE/CODE/SuperMva/obj/Debug/netcoreapp1.1/SuperMva.pdb

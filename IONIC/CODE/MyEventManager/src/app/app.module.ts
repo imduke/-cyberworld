@@ -10,6 +10,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { EventProvider } from '../providers/event/event';
 import { ProfileProvider } from '../providers/profile/profile';
 import { LoginPageModule } from '../pages/login/login.module';
+import { Camera } from '@ionic-native/camera';
+import { IonicAudioModule, AudioProvider, audioProviderFactory } from 'ionic-audio';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { LoginPageModule } from '../pages/login/login.module';
   imports: [
     BrowserModule,
     LoginPageModule,
+    IonicAudioModule.forRoot({provide:AudioProvider, useFactory: audioProviderFactory}),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -32,7 +35,8 @@ import { LoginPageModule } from '../pages/login/login.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     EventProvider,
-    ProfileProvider
+    ProfileProvider,
+    Camera
   ]
 })
 export class AppModule {}

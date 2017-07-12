@@ -1,0 +1,12 @@
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/MvaSuperWebVs.deps.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/MvaSuperWebVs.runtimeconfig.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/MvaSuperWebVs.runtimeconfig.dev.json
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/MvaSuperWebVs.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/MvaSuperWebVs.pdb
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/ClassLibrary1.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/bin/Debug/netcoreapp1.1/ClassLibrary1.pdb
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/obj/Debug/netcoreapp1.1/MvaSuperWebVs.csprojResolveAssemblyReference.cache
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/obj/Debug/netcoreapp1.1/MvaSuperWebVs.csproj.CoreCompileInputs.cache
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/obj/Debug/netcoreapp1.1/MvaSuperWebVs.AssemblyInfo.cs
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/obj/Debug/netcoreapp1.1/MvaSuperWebVs.dll
+/Users/chowdhza/Documents/BORN2CODE/VSMAC/MvaSuperWebVs/MvaSuperWebVs/obj/Debug/netcoreapp1.1/MvaSuperWebVs.pdb

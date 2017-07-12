@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{F1BED5D7-5EAD-4E25-89AB-B0942B55EEB3}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.MvaSuperWebVs PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MvaSuperWebVs/appsettings.json">
+    <Files>
+      <File FileName="MvaSuperWebVs/Program.cs" Line="18" Column="36" />
+      <File FileName="MvaSuperWebVs/Startup.cs" Line="65" Column="106" />
+      <File FileName="MvaSuperWebVs/wwwroot/index.html" Line="12" Column="1" />
+      <File FileName="ClassLibrary1/Class1.cs" Line="3" Column="24" />
+      <File FileName="MvaSuperWebVs/appsettings.json" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

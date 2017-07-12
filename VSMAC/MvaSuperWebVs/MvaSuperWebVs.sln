@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvaSuperWebVs", "MvaSuperWebVs\MvaSuperWebVs.csproj", "{F1BED5D7-5EAD-4E25-89AB-B0942B55EEB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{E7A900AF-9731-4233-BE82-0BD31BF5DCD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1BED5D7-5EAD-4E25-89AB-B0942B55EEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BED5D7-5EAD-4E25-89AB-B0942B55EEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1BED5D7-5EAD-4E25-89AB-B0942B55EEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BED5D7-5EAD-4E25-89AB-B0942B55EEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A900AF-9731-4233-BE82-0BD31BF5DCD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A900AF-9731-4233-BE82-0BD31BF5DCD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A900AF-9731-4233-BE82-0BD31BF5DCD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A900AF-9731-4233-BE82-0BD31BF5DCD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
