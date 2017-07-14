@@ -1,0 +1,17 @@
+{
+    "name": "au.com.cybersys",
+    "version": "1.0.0",
+    "displayName": "Cybersys News",
+    "cordova": {
+        "platforms": [
+            "browser"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-browser": "~4.1.0",
+        "cordova-plugin-whitelist": "1"
+    }
+}
