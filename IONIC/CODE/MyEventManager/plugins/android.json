@@ -16,6 +16,9 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
         },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
         },
@@ -31,6 +34,9 @@
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
+        },
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
         }
     }

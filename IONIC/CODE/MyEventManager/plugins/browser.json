@@ -27,11 +27,17 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "au.com.cybersys.authtest"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "au.com.cybersys.authtest"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "au.com.cybersys.firebasebaseauth"
         }
     }
 }

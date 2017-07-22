@@ -90,8 +90,8 @@ EventListPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])({
         name: 'event-list'
     }),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-event-list',template:/*ion-inline-start:"/Users/chowdhza/Documents/BORN2CODE/IONIC/CODE/MyEventManager/src/pages/event-list/event-list.html"*/'<ion-header>\n<ion-navbar>\n<ion-title>EventList</ion-title>\n</ion-navbar>\n</ion-header>\n<ion-content padding>\n<ion-list>\n<ion-item *ngFor="let event of eventList"\n(click)="goToEventDetail(event.id)">\n<h2>{{event?.name}}</h2>\n<p>Ticket: <strong>${{event?.price}}</strong></p>\n<p>Date: <strong>{{event?.date}}</strong></p>\n</ion-item>\n</ion-list>\n</ion-content>'/*ion-inline-end:"/Users/chowdhza/Documents/BORN2CODE/IONIC/CODE/MyEventManager/src/pages/event-list/event-list.html"*/,
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        selector: 'page-event-list',template:/*ion-inline-start:"C:\-cyberworld\IONIC\CODE\MyEventManager\src\pages\event-list\event-list.html"*/'<ion-header>\n\n<ion-navbar>\n\n<ion-title>EventList</ion-title>\n\n</ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n<ion-list>\n\n<ion-item *ngFor="let event of eventList"\n\n(click)="goToEventDetail(event.id)">\n\n<h2>{{event?.name}}</h2>\n\n<p>Ticket: <strong>${{event?.price}}</strong></p>\n\n<p>Date: <strong>{{event?.date}}</strong></p>\n\n</ion-item>\n\n</ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\-cyberworld\IONIC\CODE\MyEventManager\src\pages\event-list\event-list.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_event_event__["a" /* EventProvider */]])
 ], EventListPage);
