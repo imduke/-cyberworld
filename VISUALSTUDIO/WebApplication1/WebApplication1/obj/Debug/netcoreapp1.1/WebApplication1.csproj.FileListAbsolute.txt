@@ -1,9 +1,0 @@
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\bin\Debug\netcoreapp1.1\WebApplication1.deps.json
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\bin\Debug\netcoreapp1.1\WebApplication1.runtimeconfig.json
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\bin\Debug\netcoreapp1.1\WebApplication1.runtimeconfig.dev.json
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\bin\Debug\netcoreapp1.1\WebApplication1.dll
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\bin\Debug\netcoreapp1.1\WebApplication1.pdb
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\obj\Debug\netcoreapp1.1\WebApplication1.csprojResolveAssemblyReference.cache
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\obj\Debug\netcoreapp1.1\WebApplication1.AssemblyInfo.cs
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\obj\Debug\netcoreapp1.1\WebApplication1.dll
-C:\-cyberworld\VISUALSTUDIO\WebApplication1\WebApplication1\obj\Debug\netcoreapp1.1\WebApplication1.pdb
