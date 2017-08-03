@@ -5,6 +5,12 @@
 <repeat count="5">
   <p>@DateTime.Now</p>
 </repeat>
+
+<environment names="Production">
+    <cache expires-after="@TimeSpan.FromSeconds(10)">
+        CACHED for 10 SECs: @DateTime.Now.ToLocalTime()
+    </cache>
+</environment>
 <div class="row">
     <div class="col-md-3">
         <h2>Application uses</h2>
