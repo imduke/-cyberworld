@@ -1,7 +1,9 @@
-﻿@{
+﻿@inject WebApplicationMva2.Services.IRequestID requestID
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<h3>REQUEST ID: @requestID.Id</h3>
 <repeat count="5">
   <p>@DateTime.Now</p>
 </repeat>

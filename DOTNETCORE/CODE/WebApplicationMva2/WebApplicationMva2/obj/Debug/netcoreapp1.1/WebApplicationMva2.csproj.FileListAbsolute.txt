@@ -4,7 +4,7 @@ C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\bin\Debug\ne
 C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\bin\Debug\netcoreapp1.1\WebApplicationMva2.dll
 C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\bin\Debug\netcoreapp1.1\WebApplicationMva2.pdb
 C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\obj\Debug\netcoreapp1.1\WebApplicationMva2.csprojResolveAssemblyReference.cache
-C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
 C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\obj\Debug\netcoreapp1.1\WebApplicationMva2.AssemblyInfo.cs
 C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\obj\Debug\netcoreapp1.1\WebApplicationMva2.dll
 C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\obj\Debug\netcoreapp1.1\WebApplicationMva2.pdb
+C:\CYBERWORLD\DOTNETCORE\CODE\WebApplicationMva2\WebApplicationMva2\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs

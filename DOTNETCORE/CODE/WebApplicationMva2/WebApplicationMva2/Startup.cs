@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using WebApplicationMva2.Data;
 using WebApplicationMva2.Models;
 using WebApplicationMva2.Services;
+using WebApplicationMva2.Middleware;
 
 namespace WebApplicationMva2
 {
@@ -52,6 +53,8 @@ namespace WebApplicationMva2
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddSingleton<IRequestIdFactory, RequestIdFactory>();
+            services.AddScoped<IRequestID, RequestID>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +79,12 @@ namespace WebApplicationMva2
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
+            app.UseFacebookAuthentication(new FacebookOptions() {
+                                                                AppId = Configuration["Authentication:Facebook:AppId"],
+                                                                AppSecret = Configuration["Authentication:Facebook:AppSecret"]
+                                                                });
+
+            app.UseMiddleware<RequestIdMiddleware>();
 
             app.UseMvc(routes =>
             {
