@@ -208,7 +208,7 @@ namespace Microsoft.AspNetCore.Mvc.FunctionalTests
             Assert.Equal(0, response.Content.Headers.ContentLength);
 
             var responseBytes = await response.Content.ReadAsByteArrayAsync();
-            Assert.Equal(0, responseBytes.Length);
+            Assert.Empty(responseBytes);
         }
 
         [Fact]
@@ -224,7 +224,7 @@ namespace Microsoft.AspNetCore.Mvc.FunctionalTests
             Assert.Equal(0, response.Content.Headers.ContentLength);
 
             var responseBytes = await response.Content.ReadAsByteArrayAsync();
-            Assert.Equal(0, responseBytes.Length);
+            Assert.Empty(responseBytes);
         }
 
         [Theory]
@@ -375,6 +375,32 @@ namespace Microsoft.AspNetCore.Mvc.FunctionalTests
 
             // Assert
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task UsingPageRouteParameterInConventionalRouteWorks()
+        {
+            // Arrange
+            var expected = "ConventionalRoute - Hello from mypage";
+
+            // Act
+            var response = await Client.GetStringAsync("/PageRoute/ConventionalRoute/mypage");
+
+            // Assert
+            Assert.Equal(expected, response.Trim());
+        }
+
+        [Fact]
+        public async Task UsingPageRouteParameterInAttributeRouteWorks()
+        {
+            // Arrange
+            var expected = "AttributeRoute - Hello from test-page";
+
+            // Act
+            var response = await Client.GetStringAsync("/PageRoute/Attribute/test-page");
+
+            // Assert
+            Assert.Equal(expected, response.Trim());
         }
     }
 }
