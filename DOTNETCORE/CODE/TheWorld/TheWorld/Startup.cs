@@ -8,15 +8,18 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using TheWorld.Services;
+using TheWorld.Models;
 
 namespace TheWorld
 {
     public class Startup
     {
         private IConfigurationRoot _config;
+        private IHostingEnvironment _env;
         public Startup(IHostingEnvironment env)
         {
-
+            _env = env;
             var builder = new ConfigurationBuilder()
               .SetBasePath(env.ContentRootPath)
               .AddJsonFile("config.json")
@@ -30,6 +33,15 @@ namespace TheWorld
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(_config);
+            if (_env.IsDevelopment())
+            {
+                services.AddScoped<IMailService, DebugMailService>();
+            }
+            else
+            {
+
+            }
+            services.AddDbContext<WorldContext>();
             services.AddMvc();
         }
 
